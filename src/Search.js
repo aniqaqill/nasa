@@ -45,7 +45,7 @@ class Search extends React.Component {
         </form>
         <br />
 
-        <Link to="/">
+        <Link to="/nasa">
           <button>Home</button>
         </Link>
         <h2>Results</h2>
