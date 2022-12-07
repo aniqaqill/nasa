@@ -1,0 +1,10 @@
+{
+  "files": {
+    "main.js": "/nasa/static/js/main.ff694846.js",
+    "index.html": "/nasa/index.html",
+    "main.ff694846.js.map": "/nasa/static/js/main.ff694846.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.ff694846.js"
+  ]
+}
