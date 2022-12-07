@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 class Search extends React.Component {
   state = {
@@ -42,6 +43,11 @@ class Search extends React.Component {
           </label>
           <button type="submit">Search</button>
         </form>
+        <br />
+
+        <Link to="/">
+          <button>Home</button>
+        </Link>
         <h2>Results</h2>
         {/* Display the search results */}
         <ul>
