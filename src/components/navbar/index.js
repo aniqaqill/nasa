@@ -6,7 +6,7 @@ import { AppBar, Toolbar, Typography, Button, Container } from "@mui/material";
 
 function Navbar() {
   return (
-    <AppBar position="static">
+    <AppBar position="static" color="secondary">
       <Container maxWidth="lg">
         <Toolbar>
           <Typography variant="h6">NASA</Typography>
