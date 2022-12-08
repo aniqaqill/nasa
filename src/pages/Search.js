@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+import Navbar from "../components/navbar";
+
 class Search extends React.Component {
   state = {
     images: [],
@@ -31,6 +33,7 @@ class Search extends React.Component {
   render() {
     return (
       <div>
+        <Navbar />
         <h1>NASA Image Search</h1>
         <form onSubmit={this.handleSearchSubmit}>
           <label>
@@ -44,10 +47,7 @@ class Search extends React.Component {
           <button type="submit">Search</button>
         </form>
         <br />
-
-        <Link to="/nasa">
-          <button>Home</button>
-        </Link>
+        <Link to="/nasa">Back to Home</Link>
         <h2>Results</h2>
         {/* Display the search results */}
         <ul>
