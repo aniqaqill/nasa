@@ -9,17 +9,7 @@ import { Container } from "@mui/material";
 
 function App() {
   return (
-    //add background image using react container
-
-    <Container
-    // style={{
-    //   backgroundImage: `url(${meteor})`,
-    //   backgroundRepeat: "no-repeat",
-    //   width: "100%",
-    //   height: "100%",
-    //   backgroundSize: "cover",
-    // }}
-    >
+    <Container>
       <Router>
         <Routes>
           <Route path="/nasa" element={<Home />} />
