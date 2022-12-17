@@ -2,7 +2,7 @@ import React from "react";
 import axios from "axios";
 
 //import material ui components
-import { Container } from "@mui/material";
+import { Container, CircularProgress, Box, Typography } from "@mui/material";
 
 //import navbar
 import Navbar from "../components/navbar";
@@ -20,6 +20,7 @@ class home extends React.Component {
       )
       .then((res) => {
         this.setState({ data: res.data });
+        console.log(res.data);
       })
       .catch((err) => {
         console.log(err);
@@ -31,17 +32,37 @@ class home extends React.Component {
 
     // Check if the data is still loading
     if (data === null) {
-      return <p>Loading...</p>;
+      return (
+        //make the item render in the middle using box
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            height: "100vh",
+          }}
+        >
+          <CircularProgress />
+        </Box>
+      );
     }
-
     // Render the data
     return (
       //create a mui container
       <>
         <Navbar />
-        <h1>{data.title}</h1>
-        <p>{data.explanation}</p>
-        <img src={data.url} alt="" />
+        <Container>
+          <Typography variant="h4" component="h1" mt={10}>
+            {data.title}
+          </Typography>
+          <Typography variant="subtitle1" color="secondary">
+            {data.date}
+          </Typography>
+          <Typography variant="body2" mb={5}>
+            {data.explanation}
+          </Typography>
+          <img src={data.url} alt="" />
+        </Container>
       </>
     );
   }

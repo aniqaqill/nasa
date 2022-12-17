@@ -1,5 +1,16 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+
+import {
+  Typography,
+  TextField,
+  FormControl,
+  Button,
+  Stack,
+  Box,
+} from "@mui/material";
+
+//search icon
+import SearchIcon from "@mui/icons-material/Search";
 
 import Navbar from "../components/navbar";
 
@@ -34,21 +45,33 @@ class Search extends React.Component {
     return (
       <>
         <Navbar />
-        <h1>NASA Image Search</h1>
-        <form onSubmit={this.handleSearchSubmit}>
-          <label>
-            Search Term:
-            <input
-              type="text"
-              value={this.state.searchTerm}
-              onChange={this.handleSearchTermChange}
-            />
-          </label>
-          <button type="submit">Search</button>
-        </form>
+
+        <Typography
+          variant="h4"
+          component="h1"
+          mt={10}
+          sx={{ textAlign: "center" }}
+        >
+          NASA Image Search
+        </Typography>
+        <Box sx={{ textAlign: "center" }} mt={1}>
+          <FormControl>
+            <Stack direction="row">
+              <TextField
+                id="outlined-basic"
+                label="Search Term"
+                variant="outlined"
+                value={this.state.searchTerm}
+                onChange={this.handleSearchTermChange}
+                size="small"
+              />
+              <Button variant="contained" onClick={this.handleSearchSubmit}>
+                <SearchIcon />
+              </Button>
+            </Stack>
+          </FormControl>
+        </Box>
         <br />
-        <Link to="/nasa">Back to Home</Link>
-        <h2>Results</h2>
         {/* Display the search results */}
         <ul>
           {this.state.images.map((image) => (
