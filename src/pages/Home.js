@@ -37,12 +37,12 @@ class home extends React.Component {
     // Render the data
     return (
       //create a mui container
-      <Container>
+      <>
         <Navbar />
         <h1>{data.title}</h1>
         <p>{data.explanation}</p>
         <img src={data.url} alt="" />
-      </Container>
+      </>
     );
   }
 }

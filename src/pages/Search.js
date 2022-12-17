@@ -32,7 +32,7 @@ class Search extends React.Component {
 
   render() {
     return (
-      <div>
+      <>
         <Navbar />
         <h1>NASA Image Search</h1>
         <form onSubmit={this.handleSearchSubmit}>
@@ -57,7 +57,7 @@ class Search extends React.Component {
             </li>
           ))}
         </ul>
-      </div>
+      </>
     );
   }
 }
